@@ -52,7 +52,7 @@ object Sparklean extends App {
 	import sqlContext.createSchemaRDD
 	
 	val config = new Configuration()    
-    config.set("mongo.input.uri", "mongodb://business:business@fintonicdev1.cloudapp.net:27017/business.userActivity")
+    config.set("mongo.input.uri", "mongodb://notyourbusiness:notyourbusiness@fintonicdev1.cloudapp.net:27017/business.userActivity")
     val mongoRDD = sc.newAPIHadoopRDD(config, classOf[com.mongodb.hadoop.MongoInputFormat], classOf[Object], classOf[BSONObject])
     
     case class Activity(userId: String, activityType: String, yearMonth: String)
